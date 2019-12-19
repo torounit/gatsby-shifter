@@ -43,7 +43,7 @@ exports.createPages = ({ actions, graphql }) => {
       // Call `createPage()` once per WordPress page
       _.each(pages, ({ node: page }) => {
         createPage({
-          path: `/${page.slug}/`,
+          path: `/${page.path}`,
           component: pageTemplate,
           context: {
             id: page.id,
@@ -86,7 +86,7 @@ exports.createPages = ({ actions, graphql }) => {
       _.each(posts, ({ node: post }) => {
         // Create the Gatsby page for this WordPress post
         createPage({
-          path: `/${post.slug}/`,
+          path: `/${post.path}`,
           component: postTemplate,
           context: {
             id: post.id,
